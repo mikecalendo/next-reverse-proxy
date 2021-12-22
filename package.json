@@ -4,6 +4,7 @@
   "private": true,
   "main": "pages/index.js",
   "scripts": {
+    "kong:dev": "BASE_PATH=/tips npm run dev",
     "dev": "cross-env NODE_ENV=development && TAILWIND_MODE=watch next dev",
     "clean:dev": "rm -rf package-lock.json yarn.lock node_modules/ && npm install && cross-env NODE_ENV=development && TAILWIND_MODE=watch next dev",
     "build": "next build",
@@ -33,10 +34,12 @@
     "react-modal": "^3.14.4",
     "sass": "^1.42.1",
     "swr": "^1.1.1",
-    "tailwind-scrollbar-hide": "^1.0.3"
+    "tailwind-scrollbar-hide": "^1.0.3",
+    "url": "^0.11.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.0",
+    "dev-kong": "^0.11.0",
     "eslint": "8.4.1",
     "eslint-config-next": "12.0.7",
     "postcss": "^8.4.4",
