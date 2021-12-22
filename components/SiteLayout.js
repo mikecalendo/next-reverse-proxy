@@ -1,4 +1,4 @@
-import CustomLink from './CustomLink';
+import Link from './Link';
 import Image from 'next/image';
 // import BackgroundImage from "./BackgroundImage";
 
