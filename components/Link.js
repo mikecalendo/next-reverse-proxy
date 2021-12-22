@@ -1,23 +1,16 @@
-/* eslint-disable jsx-a11y/anchor-has-content */
-import Link from 'next/link';
+import NextLink, { LinkProps } from 'next/link';
+import { format } from 'url';
+import getConfig from 'next/config';
 
-const Link = ({ href, ...rest }) => {
-  const isInternalLink = href && href.startsWith('/');
-  const isAnchorLink = href && href.startsWith('#');
+const { publicRuntimeConfig } = getConfig();
 
-  if (isInternalLink) {
-    return (
-      <Link href={href}>
-        <a {...rest} />
-      </Link>
-    );
-  }
-
-  if (isAnchorLink) {
-    return <a href={href} {...rest} />;
-  }
-
-  return <a target="_blank" rel="noopener noreferrer" href={href} {...rest} />;
-};
+const Link = ({ children, ...props }) => (
+  <NextLink
+    {...props}
+    as={`${publicRuntimeConfig.basePath || ''}${format(props.href)}`}
+  >
+    {children}
+  </NextLink>
+);
 
 export default Link;

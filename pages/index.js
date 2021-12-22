@@ -1,11 +1,11 @@
 import Head from 'next/head';
 import { Helmet } from 'react-helmet';
 
-export default function Home() {
+export default function Index() {
   return (
     <div>
       <Helmet
-        title="Tips | Progressive Web App | Open Source Tip Component "
+        title="Index | Progressive Web App | Open Source Tip Component "
         meta={[
           {
             property: 'og:title',
@@ -14,7 +14,9 @@ export default function Home() {
         ]}
       />
 
-      <main></main>
+      <main>
+        <h1 className="text-gray-600">Hello</h1>
+      </main>
 
       <footer></footer>
     </div>
