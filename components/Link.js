@@ -1,5 +1,4 @@
-import NextLink, { LinkProps } from 'next/link';
-import { format } from 'url';
+import NextLink from 'next/link';
 import getConfig from 'next/config';
 
 const { publicRuntimeConfig } = getConfig();
